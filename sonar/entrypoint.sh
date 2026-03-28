@@ -11,4 +11,6 @@ mkdir -p "$SONAR_PATH_DATA" \
 chown -R 1000:1000 /opt/mount
 
 # Torna all'utente sonarqube
-exec su -s /bin/bash sonarqube -c "/opt/sonarqube/docker/entrypoint.sh \"$@\""
+su sonarqube -s /bin/bash <<EOF
+exec /opt/sonarqube/docker/entrypoint.sh "$@"
+EOF
