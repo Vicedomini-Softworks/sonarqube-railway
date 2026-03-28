@@ -1,4 +1,4 @@
-FROM sonarqube:community-lts
+FROM sonarqube:community
 
 ENV SONAR_PATH_DATA=/opt/mount/data
 ENV SONAR_PATH_EXTENSIONS=/opt/mount/extensions
