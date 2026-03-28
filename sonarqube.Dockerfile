@@ -14,5 +14,5 @@ RUN chmod +x /railway-sonar-entrypoint.sh
 ENTRYPOINT ["/railway-sonar-entrypoint.sh"]
 
 # HEALTHCHECK: controlla lo stato di SonarQube
-HEALTHCHECK --interval=30s --timeout=5s --retries=5 \
-  CMD curl -fsSL http://localhost:9000/api/system/health | grep -q '"status":"UP"' || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --retries=5 CMD curl -fsSL http://localhost:9000/api/system/health | grep -q '"status":"UP"' || exit 1
+
